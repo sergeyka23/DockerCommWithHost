@@ -1,0 +1,37 @@
+docker ps --- shows all running conteiners
+docker ps -a --- -a will show all running and stopped conteiners
+
+docker stop balbla_docker_given_name (not app name you downloaded the name docker gave it after download) --- will stop the conteiner
+
+docker rm balbla_docker_given_name --- will remove from local file system 
+
+docker images --- list of images
+docker rmi balabla_image_name --- will remove the image, before deleting the image its needed to stop and remove all dependant conteinres.
+
+docker pull blabla_conteiner --- will download a conteiner without running it
+
+docker run blabla_appp --- will downliad the app from web and run it, if there is aservice there will show the output in the prompt !!!!to exit CTRL+C!!!!
+docker run -d blabla_appp --- the -d will run it in the background and the promp will be shown
+
+docker run balabalapp --- the service will run as long as theapp inside is ruunig, when the app finished the run the service will close
+docker run balabalapp sleep 5 --- will run the service and stay alive in sleep mode for 5 seconds
+
+docker exec blabla_dockergiven_service_name cat /stc/hosts --- will execute the read the content of a folder in the docker continer 
+
+docker run blabla:4.8 --- will run a image version tag 4.8
+
+
+------input
+docker run -i blabla/app-with-input-and-print --- the -i(interactive) will cause the app to wait for our inpur befor continuing 
+
+docker run -it blabla/app-with-input-and-print --- the t will cause the app to print to the terminal the asked input question, and then read the input.
+
+------port mapping
+docker run -p 80:5000 blabla/app_blabla --- the continer gets an IP so you can reach from gost to the app by entering its http://blabla_continer_IP:5000, or http://host_ip:80 from outside the host because of the -p that farward the port from 5000 to 80
+
+-----volume mapping
+docker run -v /path/inside/theconteiner:/path/on/host blablaapp ---instead save in the folder inside the continer will save in the provided folder outside the container  
+ 
+-----inspection
+docker inspect bllbla_conteiner_name --- prints json with status on the container
+
